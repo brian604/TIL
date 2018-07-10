@@ -1,3 +1,13 @@
+i
+
+#Custom 
+hidden/
+*.hidden
+todo/
+# Ignored all lists as followed
+
+
+
 # History files
 .Rhistory
 .Rapp.history
