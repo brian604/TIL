@@ -1,0 +1,19 @@
+
+           p {
+               color: red;
+               background-color: gray;
+               font-size: 200%;
+           }
+           div{
+               color: blue;  
+               background-color: coral;
+           }
+           div p{
+               color:aqua;
+               background-color: white;
+           }
+        
+        * {
+            font-family: 'Stylish', sans-serif;
+        }
+
