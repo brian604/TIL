@@ -38,27 +38,33 @@
       * {
         font-family: "Jua", sans-serif;
       }
+      .img-container {
+        text-align: center;
+      }
     </style>
-    <title>
+    <title class="shop_title">
       재능을 팝니다 원페이지
     </title>
   </head>
   <body>
     <div class="container">
       <div class="row">
-        <img
+        <div class="img-container">
+          <img
           src="https://downloads.healthcatalyst.com/wp-content/uploads/2017/04/machine-learning-in-healthcare.jpg"
           width="300 npm"
           height="300 npm"
           alt="Machine machine-learning-in-healthcare"
         />
+        </div>
+        
       </div>
       <hr />
       <div class="row">
         <h1>상품제목: 3시간동안 바이오데이터 분석</h1>
       </div>
       <p>
-        실험하고 데이터 다루느라 힘드셨죠? 저희가 대신 해드립니다. 30 천원/hr.
+        실험하고 데이터 다루느라 힘드셨죠? 저희가 대신 해드립니다. <br/> 30 천원/hr.
         ea.
       </p>
     </div>
@@ -107,6 +113,7 @@
                   ></span>
                   <div class="col-md-8">
                   <select class="form-control" id="sel1">
+                    <option>0</option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -138,7 +145,7 @@
                       class="form-control"
                       id="message"
                       name="message"
-                      placeholder="주소를 여기에 풀로 써주세요.""
+                      placeholder="주소를 여기에 풀로 써주세요."
                       rows="7"
                     ></textarea>
                   </div>
@@ -146,8 +153,8 @@
 
                 <div class="form-group">
                   <div class="col-md-12 text-center">
-                    <button type="submit" class="btn btn-primary btn-lg">
-                      Submit
+                    <button type="submit" class="btn btn-primary btn-lg" onclick="thatisme()">
+                      주문하기
                     </button>
                   </div>
                 </div>
@@ -175,5 +182,24 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+    <script>
+    function doclick(){
+      alert("이거 강추!!")
+    }
+  
+    function thatisme(){
+      let input = document.getElementById("fname");
+      let name = input.value;
+      alert(name)
+    }
+
+    function hey(){
+      let addr = $("message").val();
+      alert("addr")
+    }
+
+
+    </script>
+
   </body>
 </html>

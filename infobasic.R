@@ -38,6 +38,11 @@ expand_bn <- function(a,b,c){
 ### Probability distribution in R ----
 # NegBin = "finding # of trials on which rth success occur" 
 
+# Bayesian Estimation
+x <- c(0,0,1,0,0,2,0,0,5)
+a <- 3.68 +10
+b <- 8.42 + sum(x)
+pbeta(0.4,shape1 = a, shape2 = b, lower.tail = T)
 
 
 

@@ -1,0 +1,33 @@
+Color 관련된 사이트 
+1. Adobe color 
+2. color material (materials.io) 
+
+크기를 지정하는 방법 
+1. Pixel size
+- font-size: 20px; 
+- width: 900px; 
+
+2. Aspect Ratio 
+- width: 100%; 
+- font-size: 75%
+
+3. Standard-Aspect Ratio 
+- font-size: 2rem (글자 2글자 크기)
+
+Font size (rem) is the 
+
+크기를 지정하는 방법 
+1. Pixel size
+- font-size: 20px; 
+- width: 900px; 
+
+2. Aspect Ratio 
+- width: 100%; 
+- font-size: 75%
+
+3. Standard-Aspect Ratio 
+- font-size: 2rem (글자 2글자 크기)
+
+Font size (rem) is the most user-friendlist user-friendlist of all 
+
+CSS Positioning: Padding, border, margin  
