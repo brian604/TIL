@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Order matters, as seen by the location of "alert"-->
+  <!-- semicolon breaks a line as a unit-->
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <!-- <h1 id="output">스파르타코딩클럽</h1> -->
+    <div id="output"></div>
+
+    <button type="button" class="btn btn-primary btn-lg">
+      찾기
+    </button>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      /*  alert("안녕!");
+        a = 100 + 200;
+        alert(a);
+        let b = ["대한", "민국", "만세"];
+        for (let i = 0; i < b.length; i++) {
+          console.log(b[i]);
+        }
+        */
+    </script>
+    <script>
+      let dd = {
+        data: [
+          { id: 1, name: "A" },
+          { id: 2, name: "B" },
+          { id: 3, name: "C" }
+        ],
+        count: 3
+      };
+
+      function printOut(data) {
+        id = data.id;
+        name = data.name;
+        $("#output").append("<br/>" + id + ":" + name);
+      }
+
+      // console.log(dd["data"][1]);
+      // console.log(dd.data.length);
+      /*  for (let i = 0; i < dd["count"]; i++) {
+                      data = dd["data"][i]; //dd.data[i]
+                      id = dd["data"][i]["id"]; // data.id
+                      name = dd["data"][i]["name"]; // data.name
+                      console.log(id, name);
+                      // JQuery 함수 starts with $. id means #
+                      $("#output").append("<br/>" + id + ":", name);
+                    }
+                    */
+
+      /*
+              JS는 적힌 순서대로 실행된다. 순서대로 실행되는 것을 동기적으로 신행된다.
+              하지만 몇몇 명령어/함수는 location-specific 하다 (비동기적이다; asynchronous)
+              sync와 async와의 차이는.
+              setTimeout 이라는 function
+              let a= {func}() 은 func.result를 a 담는다는 뜻
+
+              for (i = 0; i < dd.count; i++) {
+                data = dd.data[i];
+                printOut(data);
+              }
+
+              function hidethat() {
+                console.log("사라지기");
+                $("#output").hide();
+              }
+
+              console.log("사라지기전");
+              setTimeout(hidethat, 3000); // ms: miliseconds
+              console.log("사라지기후");
+
+              $.ajax({
+                type: "GET",
+                url: "https://getbootstrap.com",
+                data: {},
+                success: function(response) {
+                  console.log(response);
+                  $("#output").append(response);
+                }
+              });
+            */
+
+      function getdata() {
+        $.ajax({
+          type: "GET",
+          url:
+            "http://openapi.seoul.go.kr:8088/6d4d776b466c656533356a4b4b5872/json/RealtimeCityAir/1/99",
+          data: {},
+          success: handleResponse 
+        });
+      }
+
+      function handleResponse(response) {
+        for (i = 0; i < response.RealtimeCityAir.list_total_count; i++) {
+          message = response.RealtimeCityAir.RESULT.MESSAGE;
+          row = response.RealtimeCityAir.row[i];
+          district = row.MSRSTE_NM;
+          dust = row.PM10;
+          o3 = row.O3;
+          console.log("A");
+        }
+      }
+      getdata();
+      function(response){
+          if 
+      }
+      /*
+              function(response) {
+                  if (district != "강남구") {
+                    $("#output").append(`<li>${district} : PM10: ${dust}, O3: ${o3}`);
+                    console.log("정상처리했습니다");
+                  }
+                }
+                */
+    </script>
+  </body>
+</html>
