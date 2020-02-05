@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>나홀로메모장</title>
+  </head>
+  <style>
+    * {
+      font-family: "Nanum Pen Script", cursive;
+    }
+    #posting-box {
+      display: none;
+      margin-bottom: 50px;
+      border: 2px solid black;
+      padding: 10px;
+    }
+    #card-box {
+      display: flex;
+    }
+  </style>
+
+  <script>
+    is_opened = false;
+    function toggle_postingbox() {
+      if (is_opened) {
+        $("#open_button").text("포스팅박스열기");
+        is_opened = false;
+        $("#posting-box").hide();
+      } else {
+        $("#open_button").text("포스팅박스닫기");
+        is_opened = true;
+        $("#posting-box").show();
+      }
+    }
+  </script>
+  <!-- 
+      Design components go into the /head tag
+  -->
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4">나홀로링크 메모장</h1>
+        <p class="lead">
+          링크를 가져와 제목과 내용을 뿌려줍니다.
+        </p>
+        <p class="lead">
+          <a
+            id="open_button"
+            class="btn btn-primary btn-lg"
+            href="#"
+            role="button"
+            onclick="toggle_postingbox()"
+            >포스팅박스열기</a
+          >
+        </p>
+      </div>
+      <form>
+        <div id="posting-box">
+          <!-- ID는 #으로 지정한다-->
+          <div class="form-group">
+            <label for="exampleInputEmail1">포스팅주소</label>
+            <input
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Posting URL"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">코멘트</label>
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">저장하기</button>
+        </div>
+        <div id="card-box">
+          <div class="card" style="width: 18rem;">
+            <img
+              class="card-img-top"
+              src="https://ichef.bbci.co.uk/news/410/cpsprodpb/EE0D/production/_110114906_70660065_131558661484919_2121264456660461223_n.jpg"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
